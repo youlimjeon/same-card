@@ -2,8 +2,11 @@
   "name": "same-card",
   "version": "0.1.0",
   "private": true,
+  "bugs": {
+    "url": "https://github.com/youlimjeon/same-card",
+    "email": "youlimjeon@gmail.com"
+  },
   "dependencies": {
-    "antd": "^4.16.3",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
