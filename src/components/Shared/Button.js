@@ -8,19 +8,21 @@ const Button = styled.button`
   background: ${(props) => props.color};
   border: none;
   border-radius: 3px;
-  font-size: 2.5vmin;
+  font-size: ${(props) => props.fontSize};
   color: #ffffff;
   transition: 0.3s all;
 
   :hover {
     cursor: pointer;
-    font-size: 3vmin;
+    transform: scale(1.2);
   }
 `;
 
 const SharedButton = (props) => {
   const {
+    className,
     padding,
+    fontSize,
     title,
     color,
     handleClick
@@ -28,7 +30,9 @@ const SharedButton = (props) => {
 
   return (
     <Button
+      className={className}
       padding={padding}
+      fontSize={fontSize}
       color={color}
       type="button"
       onClick={handleClick}
@@ -40,9 +44,15 @@ const SharedButton = (props) => {
 
 SharedButton.propTypes = {
   padding: PropTypes.string.isRequired,
+  fontSize: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func.isRequired,
+  className: PropTypes.string
+};
+
+SharedButton.defaultProps = {
+  className: ""
 };
 
 export default SharedButton;
