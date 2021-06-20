@@ -1,12 +1,13 @@
 # 같은 카드 맞추기 게임
 
 <p align="center">
-  <img src="./readme-assets/detail01.png" />
+  <img src="./readme-assets/detail01.png" width="640" height="auto" />
 </p>
 
 ## 목차
 
 - [소개](#소개)
+- [기술 스택](#기술-스택)
 - [설치 방법](#설치-방법)
 - [사용 방법](#사용-방법)
 - [문제 바꾸기](#문제-바꾸기)
@@ -14,6 +15,14 @@
 ## 소개
 
 - 같은 카드를 맞추는 간단한 웹 애플리케이션입니다.
+
+## 기술 스택
+
+- ES2015+
+- React
+- React-router-dom
+- styled-component
+- normalize.css
 
 ## 설치 방법
 
@@ -30,14 +39,20 @@ npm start
 ## 사용 방법
 
 <p align="center">
-  <img src="./readme-assets/detail01.png" />
+  <img src="./readme-assets/detail01.png" width="640" height="auto" />
 </p>
 
 - 메인 화면에서 팀 수를 입력한 후 시작하기 버튼을 누르면 게임이 시작됩니다.
+- 제목은 src/components/Main/index.js 에서 81번째 줄을 수정하면 됩니다.
+```js
+<Title>
+  같은 카드 맞추기 게임 (제목 적기) // 해당 부분 수정
+</Title>
+```
 - 팀 수는 2부터 10까지 가능합니다.
 
 <p align="center">
-  <img src="./readme-assets/detail02.png" />
+  <img src="./readme-assets/detail02.png" width="640" height="auto" />
 </p>
 
 - 왼쪽 팀 점수판에서 각 팀별로 점수를 올리거나 내릴 수 있습니다.
@@ -45,7 +60,7 @@ npm start
 - 짝이 맞는 카드를 선택하면 해당 카드들은 자동으로 사라집니다.
 
 <p align="center">
-  <img src="./readme-assets/detail03.png" />
+  <img src="./readme-assets/detail03.png" width="640" height="auto" />
 </p>
 
 - 카드를 클릭하면 카드에 해당되는 문제를 맞출 수 있습니다.
