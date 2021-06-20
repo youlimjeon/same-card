@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# 같은 카드 맞추기 게임
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="./readme-assets/detail01.png" />
+</p>
 
-## Available Scripts
+## 목차
 
-In the project directory, you can run:
+- [소개](#소개)
+- [설치 방법](#설치-방법)
+- [사용 방법](#사용-방법)
+- [문제 바꾸기](#문제-바꾸기)
 
-### `yarn start`
+## 소개
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 같은 카드를 맞추는 간단한 웹 애플리케이션입니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 설치 방법
 
-### `yarn test`
+- [nodeJS](https://nodejs.org/ko/) 설치가 필요합니다. (LTS 버전 권장)
+- 애플리케이션을 다운받은 후 해당 명령어를 실행합니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```shell
+npm install
+npm start
+```
 
-### `yarn build`
+- 명령어 실행 후 `http://localhost:3000/`에서 애플리케이션 실행을 확인할 수 있습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 사용 방법
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="center">
+  <img src="./readme-assets/detail01.png" />
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 메인 화면에서 팀 수를 입력한 후 시작하기 버튼을 누르면 게임이 시작됩니다.
+- 팀 수는 2부터 10까지 가능합니다.
 
-### `yarn eject`
+<p align="center">
+  <img src="./readme-assets/detail02.png" />
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 왼쪽 팀 점수판에서 각 팀별로 점수를 올리거나 내릴 수 있습니다.
+- 오른쪽 게임 화면에서 카드를 선택합니다.
+- 짝이 맞는 카드를 선택하면 해당 카드들은 자동으로 사라집니다.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">
+  <img src="./readme-assets/detail03.png" />
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 카드를 클릭하면 카드에 해당되는 문제를 맞출 수 있습니다.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 문제 바꾸기
 
-## Learn More
+```
+[문제 경로]
+src/data/problems.js
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[문제에 사용할 이미지 저장 경로]
+src/assets
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 문제 파일인 `problems.js`를 열면 문제를 입력할 수 있습니다.
+- 문제의 형식은 아래와 같습니다.
 
-### Code Splitting
+```json
+{
+  "number": 1, // 문제 번호
+  "title": "문제 1", // 문제 제목
+  "content": "세살 버릇 여든까지 간다", // 문제 내용
+  "images": [ // 이미지 리스트
+    // 객체 하나당 이미지에 대한 정보
+    {
+      "src": TestImage, // 이미지 경로
+      "width": "400px", // 이미지 가로 사이즈
+      "height": "auto", // 이미지 세로 사이즈
+      "description": "속담" // 이미지 설명 텍스트
+    }
+  ],
+  "pair": 2, // 해당 문제의 짝이 될 문제 번호
+  "isCleared": false // 문제를 풀면 바뀌는 플래그.
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 이미지 추가 방법
+  1. src/assets 경로에 이미지를 추가한다 (ex: test.jpg)
+  2. src/data/problems.js 상단에 해당 이미지를 추가한다.
+  ```js
+  import TestImage from "../assets/test.jpg";
+  ```
+  3. `problems.js`에서 문제 객체 중 `images` 속성을 추가한 후 배열에 이미지 정보를 추가한다.
+  ```json
+  "images": [
+    {
+      "src": TestImage, // 이미지 경로
+      "width": "400px", // 이미지 가로 사이즈
+      "height": "200px", // 이미지 세로 사이즈
+      "description": "속담" // 이미지 설명 텍스트
+    }
+  ]
+  ```
