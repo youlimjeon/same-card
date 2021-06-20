@@ -78,7 +78,7 @@ src/assets
 - 문제 파일인 `problems.js`를 열면 문제를 입력할 수 있습니다.
 - 문제의 형식은 아래와 같습니다.
 
-```json
+```js
 {
   "number": 1, // 문제 번호
   "title": "문제 1", // 문제 제목
@@ -104,7 +104,7 @@ src/assets
   import TestImage from "../assets/test.jpg";
   ```
   3. `problems.js`에서 문제 객체 중 `images` 속성을 추가한 후 배열에 이미지 정보를 추가한다.
-  ```json
+  ```js
   "images": [
     {
       "src": TestImage, // 이미지 경로
