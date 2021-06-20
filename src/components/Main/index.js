@@ -96,6 +96,7 @@ const Main = () => {
       </Team>
       <Button
         padding="1rem"
+        fontSize="2.5vmin"
         title="시작하기"
         color="black"
         handleClick={startGame}
